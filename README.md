@@ -26,6 +26,13 @@ python probar_conexion.py
 python main.py
 ```
 
+- Opcional: crear o restaurar el usuario administrador:
+
+```bash
+python crear_admin.py
+```
+
 Notas:
+- `conexion.py` ahora inicializa la base `alumnado` y crea las tablas `usuarios` y `alumnos` si no existen.
+- El usuario administrador por defecto es `admin` con contraseña `1234`.
 - Ajusta los datos de conexión en `conexion.py` si usas contraseña o puerto distintos.
-- Asegúrate de que la tabla `usuarios` tenga una columna `password` con hashes generados por `bcrypt`.

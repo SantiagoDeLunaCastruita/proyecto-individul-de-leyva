@@ -1,14 +1,10 @@
-import mysql.connector
+from conexion import conectar
 
-def conectar():
-    try:
-        conexion = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="",
-            database="alumnado"
-        )
-        return conexion
-    except Exception as e:
-        print("Error de conexión:", e)
-        return Nones
+print("Intentando conectar a la base de datos...")
+db = conectar()
+
+if db:
+    print("¡CONEXIÓN EXITOSA! Python y HeidiSQL ya están hablando el mismo idioma.")
+    db.close()
+else:
+    print("❌ ERROR: No se pudo conectar. Revisa tu contraseña en conexion.py o que tu servidor MySQL esté encendido.")
