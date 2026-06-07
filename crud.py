@@ -28,12 +28,12 @@ def obtener_alumnos(filtro: str = ""):
             cursor.execute(
                 """
                 SELECT matricula, apellido_paterno, apellido_materno, nombres, curp,
-                       especialidad, telefono, ciudad_origen, estado, disciplina, foto
+                        especialidad, telefono, ciudad_origen, estado, disciplina, foto
                 FROM alumnos
                 WHERE matricula LIKE %s
-                   OR apellido_paterno LIKE %s
-                   OR apellido_materno LIKE %s
-                   OR nombres LIKE %s
+                    OR apellido_paterno LIKE %s
+                    OR apellido_materno LIKE %s
+                    OR nombres LIKE %s
                 ORDER BY matricula
                 """,
                 (filtro_like, filtro_like, filtro_like, filtro_like)
@@ -42,7 +42,7 @@ def obtener_alumnos(filtro: str = ""):
             cursor.execute(
                 """
                 SELECT matricula, apellido_paterno, apellido_materno, nombres, curp,
-                       especialidad, telefono, ciudad_origen, estado, disciplina, foto
+                            especialidad, telefono, ciudad_origen, estado, disciplina, foto
                 FROM alumnos
                 ORDER BY matricula
                 """
